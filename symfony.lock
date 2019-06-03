@@ -1,4 +1,7 @@
 {
+    "aws/aws-sdk-php": {
+        "version": "3.99.0"
+    },
     "doctrine/annotations": {
         "version": "1.0",
         "recipe": {
@@ -99,6 +102,9 @@
     "exsyst/swagger": {
         "version": "v0.4.1"
     },
+    "firebase/php-jwt": {
+        "version": "v5.0.0"
+    },
     "friendsofsymfony/rest-bundle": {
         "version": "2.2",
         "recipe": {
@@ -114,8 +120,38 @@
     "friendsofsymfony/user-bundle": {
         "version": "v2.1.2"
     },
+    "google/apiclient": {
+        "version": "2.0",
+        "recipe": {
+            "repo": "github.com/symfony/recipes-contrib",
+            "branch": "master",
+            "version": "2.0",
+            "ref": "49c5d7a66d863d28513979bf0666dc77599100c0"
+        },
+        "files": [
+            "config/packages/google_apiclient.yaml"
+        ]
+    },
+    "google/apiclient-services": {
+        "version": "v0.101"
+    },
+    "google/auth": {
+        "version": "v1.5.1"
+    },
+    "guzzlehttp/guzzle": {
+        "version": "6.3.3"
+    },
+    "guzzlehttp/promises": {
+        "version": "v1.3.1"
+    },
+    "guzzlehttp/psr7": {
+        "version": "1.5.2"
+    },
     "jdorn/sql-formatter": {
         "version": "v1.2.17"
+    },
+    "kunalvarma05/dropbox-php-sdk": {
+        "version": "v0.2.1"
     },
     "lcobucci/jwt": {
         "version": "3.3.1"
@@ -131,6 +167,12 @@
         "files": [
             "config/packages/lexik_jwt_authentication.yaml"
         ]
+    },
+    "monolog/monolog": {
+        "version": "1.24.0"
+    },
+    "mtdowling/jmespath.php": {
+        "version": "2.4.0"
     },
     "namshi/jose": {
         "version": "7.2.3"
@@ -163,14 +205,23 @@
     "phpdocumentor/type-resolver": {
         "version": "0.4.0"
     },
+    "phpseclib/phpseclib": {
+        "version": "2.0.17"
+    },
     "psr/cache": {
         "version": "1.0.1"
     },
     "psr/container": {
         "version": "1.0.0"
     },
+    "psr/http-message": {
+        "version": "1.0.1"
+    },
     "psr/log": {
         "version": "1.1.0"
+    },
+    "ralouphie/getallheaders": {
+        "version": "2.0.5"
     },
     "swiftmailer/swiftmailer": {
         "version": "v6.2.1"
@@ -419,6 +470,9 @@
     },
     "symfony/yaml": {
         "version": "v4.3.0"
+    },
+    "tightenco/collect": {
+        "version": "v5.8.19"
     },
     "twig/twig": {
         "version": "v2.11.0"
