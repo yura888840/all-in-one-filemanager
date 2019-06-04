@@ -244,6 +244,9 @@
     "ocramius/proxy-manager": {
         "version": "2.2.2"
     },
+    "pdepend/pdepend": {
+        "version": "2.5.2"
+    },
     "php-cs-fixer/diff": {
         "version": "v1.3.0"
     },
@@ -255,6 +258,9 @@
     },
     "phpdocumentor/type-resolver": {
         "version": "0.4.0"
+    },
+    "phpmd/phpmd": {
+        "version": "2.6.0"
     },
     "phpseclib/phpseclib": {
         "version": "2.0.17"
