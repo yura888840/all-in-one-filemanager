@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<ruleset>
+    <file>src</file>
+    <file>public</file>
+
+    <exclude-pattern>public/bundles/*</exclude-pattern>
+    <exclude-pattern>vendor/*</exclude-pattern>
+
+    <arg name="colors" />
+    <arg name="parallel" value="75" />
+    <!-- ignore warnings -->
+    <arg name="warning-severity" value="0" />
+    <!-- p - print progress -->
+    <arg value="p" />
+
+    <rule ref="PSR2" />
+
+    <!-- AppKernel -->
+    <rule ref="PSR1.Classes.ClassDeclaration">
+        <severity>0</severity>
+    </rule>
+
+    <!-- not latest default value in method/function -->
+    <rule ref="PEAR.Functions.ValidDefaultValue">
+        <severity>0</severity>
+    </rule>
+    <rule ref="Generic.Classes.DuplicateClassName"/>
+    <rule ref="Generic.CodeAnalysis.EmptyStatement"/>
+    <rule ref="Generic.CodeAnalysis.UnconditionalIfStatement"/>
+    <rule ref="Generic.CodeAnalysis.UnnecessaryFinalModifier"/>
+    <rule ref="Generic.CodeAnalysis.UnusedFunctionParameter"/>
+    <rule ref="Generic.CodeAnalysis.UselessOverridingMethod"/>
+    <rule ref="Generic.ControlStructures.InlineControlStructure"/>
+    <rule ref="Generic.Functions.CallTimePassByReference"/>
+    <rule ref="Generic.NamingConventions.ConstructorName"/>
+    <rule ref="Generic.NamingConventions.UpperCaseConstantName"/>
+    <rule ref="Generic.PHP.LowerCaseConstant"/>
+    <rule ref="Generic.WhiteSpace.DisallowTabIndent"/>
+    <rule ref="Squiz.PHP.LowercasePHPFunctions"/>
+    <rule ref="Squiz.Scope.StaticThisUsage"/>
+</ruleset>

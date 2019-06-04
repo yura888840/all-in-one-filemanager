@@ -2,6 +2,12 @@
     "aws/aws-sdk-php": {
         "version": "3.99.0"
     },
+    "composer/semver": {
+        "version": "1.5.0"
+    },
+    "composer/xdebug-handler": {
+        "version": "1.3.3"
+    },
     "doctrine/annotations": {
         "version": "1.0",
         "recipe": {
@@ -105,6 +111,18 @@
     "firebase/php-jwt": {
         "version": "v5.0.0"
     },
+    "friendsofphp/php-cs-fixer": {
+        "version": "2.2",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "master",
+            "version": "2.2",
+            "ref": "81dee417d2cc60cd1c9d6208dff2ec22a1103e93"
+        },
+        "files": [
+            ".php_cs.dist"
+        ]
+    },
     "friendsofsymfony/rest-bundle": {
         "version": "2.2",
         "recipe": {
@@ -150,6 +168,9 @@
     "jdorn/sql-formatter": {
         "version": "v1.2.17"
     },
+    "jean85/pretty-package-versions": {
+        "version": "1.2"
+    },
     "kunalvarma05/dropbox-php-sdk": {
         "version": "v0.2.1"
     },
@@ -190,11 +211,41 @@
             "config/routes/nelmio_api_doc.yaml"
         ]
     },
+    "nette/bootstrap": {
+        "version": "v3.0.0"
+    },
+    "nette/di": {
+        "version": "v3.0.0"
+    },
+    "nette/finder": {
+        "version": "v2.5.0"
+    },
+    "nette/neon": {
+        "version": "v3.0.0"
+    },
+    "nette/php-generator": {
+        "version": "v3.2.2"
+    },
+    "nette/robot-loader": {
+        "version": "v3.2.0"
+    },
+    "nette/schema": {
+        "version": "v1.0.0"
+    },
+    "nette/utils": {
+        "version": "v3.0.1"
+    },
+    "nikic/php-parser": {
+        "version": "v4.2.2"
+    },
     "ocramius/package-versions": {
         "version": "1.4.0"
     },
     "ocramius/proxy-manager": {
         "version": "2.2.2"
+    },
+    "php-cs-fixer/diff": {
+        "version": "v1.3.0"
     },
     "phpdocumentor/reflection-common": {
         "version": "1.0.1"
@@ -207,6 +258,15 @@
     },
     "phpseclib/phpseclib": {
         "version": "2.0.17"
+    },
+    "phpstan/phpdoc-parser": {
+        "version": "0.3.4"
+    },
+    "phpstan/phpstan": {
+        "version": "0.11.8"
+    },
+    "phpstan/phpstan-phpunit": {
+        "version": "0.11.2"
     },
     "psr/cache": {
         "version": "1.0.1"
@@ -222,6 +282,33 @@
     },
     "ralouphie/getallheaders": {
         "version": "2.0.5"
+    },
+    "ramsey/uuid": {
+        "version": "3.8.0"
+    },
+    "snc/redis-bundle": {
+        "version": "2.0",
+        "recipe": {
+            "repo": "github.com/symfony/recipes-contrib",
+            "branch": "master",
+            "version": "2.0",
+            "ref": "e9c58bfc414cfb7f06e8e5ae9f589868498f5d6a"
+        },
+        "files": [
+            "config/packages/snc_redis.yaml"
+        ]
+    },
+    "squizlabs/php_codesniffer": {
+        "version": "3.0",
+        "recipe": {
+            "repo": "github.com/symfony/recipes-contrib",
+            "branch": "master",
+            "version": "3.0",
+            "ref": "0dc9cceda799fd3a08b96987e176a261028a3709"
+        },
+        "files": [
+            "phpcs.xml.dist"
+        ]
     },
     "swiftmailer/swiftmailer": {
         "version": "v6.2.1"
@@ -361,6 +448,9 @@
     "symfony/polyfill-php73": {
         "version": "v1.11.0"
     },
+    "symfony/process": {
+        "version": "v4.3.0"
+    },
     "symfony/property-access": {
         "version": "v4.3.0"
     },
@@ -414,6 +504,9 @@
     },
     "symfony/service-contracts": {
         "version": "v1.1.2"
+    },
+    "symfony/stopwatch": {
+        "version": "v4.3.0"
     },
     "symfony/swiftmailer-bundle": {
         "version": "2.5",

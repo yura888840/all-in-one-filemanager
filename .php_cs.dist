@@ -1,0 +1,59 @@
+<?php
+
+$risky = false;
+
+return PhpCsFixer\Config::create()
+    ->setRiskyAllowed($risky)
+    ->setRules([
+        '@PHP71Migration' => true,
+        '@PHP71Migration:risky' => $risky,
+        '@PHPUnit60Migration:risky' => $risky,
+        '@Symfony' => true,
+        '@Symfony:risky' => $risky,
+        'align_multiline_comment' => true,
+        'array_syntax' => ['syntax' => 'short'],
+        'blank_line_before_statement' => true,
+        'combine_consecutive_issets' => true,
+        'combine_consecutive_unsets' => true,
+        'compact_nullable_typehint' => true,
+        'declare_strict_types' => $risky,
+        'dir_constant' => $risky,
+        'final_internal_class' => $risky,
+        'heredoc_to_nowdoc' => true,
+        'line_ending' => true,
+        'list_syntax' => ['syntax' => 'long'],
+        'mb_str_functions' => $risky,
+        'method_argument_space' => ['ensure_fully_multiline' => true],
+        'native_function_invocation' => $risky,
+        'no_extra_blank_lines' => ['tokens' => ['break', 'continue', 'extra', 'return', 'throw', 'use', 'parenthesis_brace_block', 'square_brace_block', 'curly_brace_block']],
+        'no_null_property_initialization' => true,
+        'no_short_echo_tag' => true,
+        'no_superfluous_elseif' => true,
+        'no_unneeded_curly_braces' => true,
+        'no_unneeded_final_method' => true,
+        'no_unreachable_default_argument_value' => $risky,
+        'no_useless_else' => true,
+        'no_useless_return' => true,
+        'ordered_class_elements' => true,
+        'ordered_imports' => true,
+        'php_unit_strict' => $risky,
+        'php_unit_test_class_requires_covers' => $risky,
+        'phpdoc_add_missing_param_annotation' => true,
+        'phpdoc_no_package' => true,
+        'phpdoc_order' => true,
+        'phpdoc_align' => false,
+        'phpdoc_types_order' => true,
+        'protected_to_private' => $risky,
+        'random_api_migration' => $risky,
+        'semicolon_after_instruction' => true,
+        'single_line_comment_style' => true,
+        'strict_comparison' => $risky,
+        'strict_param' => $risky,
+        'yoda_style' => false,
+    ])
+    ->setFinder(
+        PhpCsFixer\Finder::create()
+            ->in(__DIR__.'/src')
+            ->name('*.php')
+    )
+;
