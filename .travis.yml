@@ -20,8 +20,7 @@ before_script:
   - openssl rsa -passin pass:test -pubout -in config/jwt/private.pem -passout pass:test -out config/jwt/public.pem
   - npm i -g npm
   - cd frontend && npm install && npm run build
-  - pwd
-  - cp phpunit.xml.dist phpunit.xml
+  - cd .. && cp phpunit.xml.dist phpunit.xml
 
 script:
   - bin/phpunit --coverage-clover=coverage.xml
