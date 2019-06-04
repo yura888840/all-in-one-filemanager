@@ -18,7 +18,9 @@ before_script:
   - mkdir config/jwt
   - openssl genrsa -passout pass:test -out config/jwt/private.pem -aes256 4096
   - openssl rsa -passin pass:test -pubout -in config/jwt/private.pem -passout pass:test -out config/jwt/public.pem
-  - cd frontend && npm install && npm run test && npm run build
+  - npm i -g npm
+  - cd frontend && npm install && npm run build
+  - pwd
   - cp phpunit.xml.dist phpunit.xml
 
 script:
