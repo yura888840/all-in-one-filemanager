@@ -1,5 +1,5 @@
 # Read the documentation: https://symfony.com/doc/master/bundles/FOSRestBundle/index.html
-fos_rest: ~
+#
 #    param_fetcher_listener:  true
 #    allowed_methods_listener:  true
 #    routing_loader: true
@@ -13,3 +13,35 @@ fos_rest: ~
 #    format_listener:
 #        rules:
 #            - { path: ^/api, prefer_extension: true, fallback_format: json, priorities: [ json, html ] }
+fos_rest:
+    param_fetcher_listener:  true
+    routing_loader: true
+    view:
+        default_engine: ~
+        view_response_listener: true
+        formats:
+            json: true
+    versioning: true
+    access_denied_listener:
+        enabled: true
+        formats:
+            json: true
+            php: true
+    body_converter:
+        enabled: true
+        validate: true
+    format_listener:
+        enabled: true
+        rules:
+            - { path: ^/api, prefer_extension: true, fallback_format: json, priorities: [ json, html ] }
+            - { path: '^/', priorities: [ 'text/html', '*/*'], fallback_format: html, prefer_extension: true }
+    exception:
+        codes:
+            App\Exception\RestException: 403
+        #messages:
+        #    App\Exception\RestException: Rest Exception.
+    service:
+        view_handler: app.view_handler
+
+sensio_framework_extra:
+    request: { converters: true }
