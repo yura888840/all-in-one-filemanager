@@ -1,1 +1,15 @@
 services:
+    _defaults:
+        autowire: true
+
+    fm.fs_client:
+        class: App\CommunicationBundle\Utils\NullClient
+
+    App\CommunicationBundle\Utils\ClientWrapper:
+        class: App\CommunicationBundle\Utils\ClientWrapper
+        arguments:
+            - '@fm.fs_client'
+        calls:
+            - method: setMockMode
+              arguments: [true]
+

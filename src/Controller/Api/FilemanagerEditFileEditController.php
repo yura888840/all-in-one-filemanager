@@ -3,15 +3,18 @@ declare(strict_types=1);
 
 namespace App\Controller\Api;
 
+use App\CommunicationBundle\Utils\ClientWrapper;
+use App\CommunicationBundle\Utils\Plugin\EditFileEditPlugin;
 use FOS\RestBundle\Controller\FOSRestController;
 use FOS\RestBundle\Controller\Annotations as Rest;
 use FOS\RestBundle\Controller\Annotations\View;
 use Swagger\Annotations as SWG;
 
-class FilemanagerController extends FOSRestController
+class FilemanagerEditFileEditController extends FOSRestController
 {
     /**
-     * @Rest\Get("/api/filemanager/v1/list.{_format}", defaults={"_format"="json"})
+     * @Rest\Get("/api/v1/filemanager/file/edit.{_format}", defaults={"_format"="json"})
+     * ReactPath("url_list")
      *
      * @SWG\Tag(name="FileManager")
      *
@@ -31,9 +34,14 @@ class FilemanagerController extends FOSRestController
      * )
      *
      * @View(statusCode=200)
+     *
+     * @param ClientWrapper $client
+     * @return View
      */
-    public function listAction()
+    public function __invoke(ClientWrapper $client)
     {
+        $client->setPlugin(new EditFileEditPlugin());
 
+        return $client->call();
     }
 }
