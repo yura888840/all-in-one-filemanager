@@ -9,7 +9,10 @@ class CreateFolderCreateMock implements MockInterface
     public static function getMock()
     {
         return [
-            [__CLASS__]
+            'success' => true,
+            'errorMsg' => null,
+            'error' => null,
+            'data' => []
         ];
     }
 }

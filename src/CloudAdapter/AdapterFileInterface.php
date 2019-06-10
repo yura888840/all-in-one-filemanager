@@ -4,9 +4,16 @@ namespace App\CloudAdapter;
 
 interface AdapterFileInterface
 {
-    public function doGetContent();
-
     public function doDownload();
 
-    public function doEdit();
+    public function doUpload();
+
+    public function doDelete();
+
+    public function doRename();
+
+    public function doMove();
+
+    public function doExecuteCommand();
+
 }

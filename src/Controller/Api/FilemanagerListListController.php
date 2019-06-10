@@ -4,12 +4,13 @@ declare(strict_types=1);
 namespace App\Controller\Api;
 
 use App\CommunicationBundle\Utils\ClientWrapper;
-use App\CommunicationBundle\Utils\ClientWrapperInterface;
 use App\CommunicationBundle\Utils\Plugin\ListListPlugin;
 use FOS\RestBundle\Controller\FOSRestController;
 use FOS\RestBundle\Controller\Annotations as Rest;
 use FOS\RestBundle\Controller\Annotations\View;
 use Swagger\Annotations as SWG;
+use FOS\RestBundle\Request\ParamFetcher;
+use FOS\RestBundle\Controller\Annotations\QueryParam;
 
 class FilemanagerListListController extends FOSRestController
 {
@@ -36,10 +37,14 @@ class FilemanagerListListController extends FOSRestController
      *
      * @View(statusCode=200)
      *
+     * @QueryParam(name="path", requirements="[a-z]+", description="path")
+     *
      * @param ClientWrapper $client
+     * @param ParamFetcher $paramFetcher
+     *
      * @return View
      */
-    public function __invoke(ClientWrapper $client)
+    public function __invoke(ClientWrapper $client, ParamFetcher $paramFetcher)
     {
         $client->setPlugin(new ListListPlugin());
 

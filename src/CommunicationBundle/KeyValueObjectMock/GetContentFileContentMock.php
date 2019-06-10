@@ -9,7 +9,8 @@ class GetContentFileContentMock implements MockInterface
     public static function getMock()
     {
         return [
-            [__CLASS__]
+            'success' => true,
+            'data' => 'http://localhost:3000/surganowa.txt_Ascii.txt'
         ];
     }
 }
