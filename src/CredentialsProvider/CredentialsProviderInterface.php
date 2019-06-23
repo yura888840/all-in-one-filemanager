@@ -9,5 +9,7 @@ interface CredentialsProviderInterface
      *
      * @return \stdClass
      */
-    public function getCredentialsFor(int $credentialsProviderID, int $userId, int $key) : \stdClass ;
+    public function getCredentialsFor(int $credentialsProviderID, int $userId, int $key) : \stdClass;
+
+    public function getByHash(string $hash) : \stdClass;
 }

@@ -15,4 +15,9 @@ class S3CredentialsMock implements CredentialsProviderInterface
     {
         return new \stdClass();
     }
+
+    public function getByHash(string $hash): \stdClass
+    {
+        // TODO: Implement getByHash() method.
+    }
 }
