@@ -156,6 +156,12 @@
     "google/auth": {
         "version": "v1.5.1"
     },
+    "google/cloud-core": {
+        "version": "v1.28.2"
+    },
+    "google/cloud-storage": {
+        "version": "v1.12.2"
+    },
     "guzzlehttp/guzzle": {
         "version": "6.3.3"
     },
@@ -176,6 +182,34 @@
     },
     "lcobucci/jwt": {
         "version": "3.3.1"
+    },
+    "league/flysystem": {
+        "version": "1.0.52"
+    },
+    "league/flysystem-aws-s3-v3": {
+        "version": "1.0.23"
+    },
+    "league/flysystem-bundle": {
+        "version": "1.0",
+        "recipe": {
+            "repo": "github.com/symfony/recipes-contrib",
+            "branch": "master",
+            "version": "1.0",
+            "ref": "8ad3ded1f39fedce098e43259741f42092a1010e"
+        },
+        "files": [
+            "config/packages/flysystem.yaml",
+            "var/storage/.gitignore"
+        ]
+    },
+    "league/flysystem-cached-adapter": {
+        "version": "1.0.9"
+    },
+    "league/flysystem-sftp": {
+        "version": "1.0.20"
+    },
+    "league/flysystem-ziparchive": {
+        "version": "1.0.3"
     },
     "lexik/jwt-authentication-bundle": {
         "version": "2.5",
@@ -209,6 +243,18 @@
         "files": [
             "config/packages/nelmio_api_doc.yaml",
             "config/routes/nelmio_api_doc.yaml"
+        ]
+    },
+    "nelmio/cors-bundle": {
+        "version": "1.5",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "master",
+            "version": "1.5",
+            "ref": "f0436fc35fca88eada758311f8de43bfb61f1980"
+        },
+        "files": [
+            "config/packages/nelmio_cors.yaml"
         ]
     },
     "nette/bootstrap": {
@@ -292,6 +338,9 @@
     "ramsey/uuid": {
         "version": "3.8.0"
     },
+    "rize/uri-template": {
+        "version": "0.3.2"
+    },
     "sensio/framework-extra-bundle": {
         "version": "5.2",
         "recipe": {
@@ -316,6 +365,12 @@
             "config/packages/snc_redis.yaml"
         ]
     },
+    "spatie/dropbox-api": {
+        "version": "1.9.0"
+    },
+    "spatie/flysystem-dropbox": {
+        "version": "1.1.0"
+    },
     "squizlabs/php_codesniffer": {
         "version": "3.0",
         "recipe": {
@@ -327,6 +382,9 @@
         "files": [
             "phpcs.xml.dist"
         ]
+    },
+    "superbalist/flysystem-google-storage": {
+        "version": "7.2.1"
     },
     "swiftmailer/swiftmailer": {
         "version": "v6.2.1"

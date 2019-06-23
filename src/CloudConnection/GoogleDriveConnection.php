@@ -2,7 +2,7 @@
 
 namespace App\CloudConnection;
 
-class GoogleDriveCloudConnection implements CloudConnectionInterface
+class GoogleDriveConnection implements CloudConnectionInterface
 {
     public function connect()
     {
