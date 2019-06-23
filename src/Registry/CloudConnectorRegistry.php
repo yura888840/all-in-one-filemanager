@@ -2,9 +2,24 @@
 
 namespace App\Registry;
 
-class CloudConnectorRegistry implements \ArrayAccess
+use League\Flysystem\Filesystem;
+
+class CloudConnectorRegistry implements \ArrayAccess, \Iterator
 {
+    /**
+     * @var Filesystem[]
+     */
     private $connections;
+
+    private $count = 0;
+
+    public function addConnector(Filesystem $connector)
+    {
+        $this->connections[] = $connector;
+
+        return $this;
+    }
+
 
     /**
      * Whether a offset exists
@@ -77,5 +92,66 @@ class CloudConnectorRegistry implements \ArrayAccess
      */
     public function offsetUnset($offset) {
         // TODO: Implement offsetUnset() method.
+    }
+
+    /**
+     * Return the current element
+     *
+     * @link  http://php.net/manual/en/iterator.current.php
+     * @return mixed Can return any type.
+     * @since 5.0.0
+     */
+    public function current()
+    {
+        return $this->connections[$this->count];
+    }
+
+    /**
+     * Move forward to next element
+     *
+     * @link  http://php.net/manual/en/iterator.next.php
+     * @return void Any returned value is ignored.
+     * @since 5.0.0
+     */
+    public function next()
+    {
+        ++$this->count;
+    }
+
+    /**
+     * Return the key of the current element
+     *
+     * @link  http://php.net/manual/en/iterator.key.php
+     * @return mixed scalar on success, or null on failure.
+     * @since 5.0.0
+     */
+    public function key()
+    {
+        return $this->count;
+    }
+
+    /**
+     * Checks if current position is valid
+     *
+     * @link  http://php.net/manual/en/iterator.valid.php
+     * @return boolean The return value will be casted to boolean and then evaluated.
+     * Returns true on success or false on failure.
+     * @since 5.0.0
+     */
+    public function valid()
+    {
+        return array_key_exists($this->count, $this->connections);
+    }
+
+    /**
+     * Rewind the Iterator to the first element
+     *
+     * @link  http://php.net/manual/en/iterator.rewind.php
+     * @return void Any returned value is ignored.
+     * @since 5.0.0
+     */
+    public function rewind()
+    {
+        $this->count = 0;
     }
 }

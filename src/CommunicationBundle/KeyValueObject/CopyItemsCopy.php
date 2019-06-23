@@ -2,13 +2,8 @@
 
 namespace App\CommunicationBundle\KeyValueObject;
 
-class CopyItemsCopy
+class CopyItemsCopy extends OperationContainer
 {
-    public function __construct()
-    {
-
-    }
-
     public function __invoke()
     {
 

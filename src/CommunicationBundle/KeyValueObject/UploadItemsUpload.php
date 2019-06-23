@@ -2,13 +2,8 @@
 
 namespace App\CommunicationBundle\KeyValueObject;
 
-class UploadItemsUpload
+class UploadItemsUpload extends OperationContainer
 {
-    public function __construct()
-    {
-
-    }
-
     public function __invoke()
     {
 

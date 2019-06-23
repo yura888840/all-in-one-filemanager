@@ -2,13 +2,8 @@
 
 namespace App\CommunicationBundle\KeyValueObject;
 
-class MoveItemsMove
+class MoveItemsMove extends OperationContainer
 {
-    public function __construct()
-    {
-
-    }
-
     public function __invoke()
     {
 

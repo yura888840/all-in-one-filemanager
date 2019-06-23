@@ -5,11 +5,15 @@ services:
     fm.fs_client:
         class: App\CommunicationBundle\Utils\NullClient
 
+    fm.fs_resolver:
+        class: App\Service\ConnectorResolver\ReactFilemanagerConnectorResolver
+
     App\CommunicationBundle\Utils\ClientWrapper:
         class: App\CommunicationBundle\Utils\ClientWrapper
         arguments:
             - '@fm.fs_client'
+            - '@fm.fs_resolver'
         calls:
             - method: setMockMode
-              arguments: [true]
+              arguments: [false]
 

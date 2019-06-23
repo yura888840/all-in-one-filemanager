@@ -2,13 +2,8 @@
 
 namespace App\CommunicationBundle\KeyValueObject;
 
-class CreateFolderCreate
+class CreateFolderCreate extends OperationContainer
 {
-    public function __construct()
-    {
-
-    }
-
     public function __invoke()
     {
 

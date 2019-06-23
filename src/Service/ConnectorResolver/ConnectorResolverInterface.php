@@ -11,5 +11,5 @@ use Symfony\Component\HttpFoundation\RequestStack;
  */
 interface ConnectorResolverInterface
 {
-    public function resolve(RequestStack $requestStack) : \ArrayAccess;
+    public function resolve() : \ArrayAccess;
 }

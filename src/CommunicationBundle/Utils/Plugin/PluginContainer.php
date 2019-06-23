@@ -4,6 +4,7 @@ namespace App\CommunicationBundle\Utils\Plugin;
 
 use App\CommunicationBundle\Utils\PluginInterface;
 use App\CommunicationBundle\Utils\MockInterface;
+use App\Service\ConnectorResolver\ConnectorResolverInterface;
 
 abstract class PluginContainer implements PluginInterface
 {
@@ -16,8 +17,15 @@ abstract class PluginContainer implements PluginInterface
 
     protected $mock;
 
+    protected $connectorResolver;
+
     public function getKeyValueClass(): ?string
     {
+        //@todo remove this workaround
+        if ($this->objectClass) {
+            $this->keyValueClass = $this->objectClass;
+        }
+
         return $this->keyValueClass;
     }
 
@@ -33,6 +41,12 @@ abstract class PluginContainer implements PluginInterface
     public function setMockClass($mockClass): self
     {
         $this->mockClass = $mockClass;
+        return $this;
+    }
+
+    public function setConnectorResolver(ConnectorResolverInterface $connectorResolver)
+    {
+        $this->connectorResolver = $connectorResolver;
         return $this;
     }
 }

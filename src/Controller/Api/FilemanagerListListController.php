@@ -5,6 +5,7 @@ namespace App\Controller\Api;
 
 use App\CommunicationBundle\Utils\ClientWrapper;
 use App\CommunicationBundle\Utils\Plugin\ListListPlugin;
+use App\Service\ConnectorResolver\ReactFilemanagerConnectorResolver;
 use FOS\RestBundle\Controller\FOSRestController;
 use FOS\RestBundle\Controller\Annotations as Rest;
 use FOS\RestBundle\Controller\Annotations\View;
@@ -40,12 +41,14 @@ class FilemanagerListListController extends FOSRestController
      * @QueryParam(name="path", requirements="[a-z]+", description="path")
      *
      * @param ClientWrapper $client
-     * @param ParamFetcher $paramFetcher
+     * @param ParamFetcher  $paramFetcher
      *
      * @return View
      */
-    public function __invoke(ClientWrapper $client, ParamFetcher $paramFetcher)
-    {
+    public function __invoke(
+        ClientWrapper $client,
+        ParamFetcher $paramFetcher
+    ) {
         $client->setPlugin(new ListListPlugin());
 
         return $client->call();

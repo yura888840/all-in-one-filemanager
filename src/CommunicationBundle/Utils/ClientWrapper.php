@@ -3,6 +3,8 @@
 namespace App\CommunicationBundle\Utils;
 
 use App\CommunicationBundle\KeyValueObjectMock\MockFactory;
+use App\Service\ConnectorResolver\ConnectorResolverInterface;
+use App\Service\ConnectorResolver\ReactFilemanagerConnectorResolver;
 
 class ClientWrapper implements ClientWrapperInterface
 {
@@ -20,9 +22,21 @@ class ClientWrapper implements ClientWrapperInterface
      */
     private $client;
 
-    public function __construct(RestClientInterface $client)
+    /**
+     * @var ConnectorResolverInterface
+     */
+    private $connectorResolver;
+
+    /**
+     * ClientWrapper constructor.
+     *
+     * @param RestClientInterface        $client
+     * @param ConnectorResolverInterface $connectorResolver
+     */
+    public function __construct(RestClientInterface $client, ConnectorResolverInterface $connectorResolver)
     {
         $this->client = $client;
+        $this->connectorResolver = $connectorResolver;
     }
 
     public function setMockMode(bool $mockMode): ClientWrapperInterface
@@ -40,6 +54,7 @@ class ClientWrapper implements ClientWrapperInterface
     public function setPlugin(PluginInterface $plugin): ClientWrapperInterface
     {
         $this->plugin = $plugin;
+        $this->plugin->setConnectorResolver($this->connectorResolver);
 
         return $this;
     }
@@ -54,7 +69,10 @@ class ClientWrapper implements ClientWrapperInterface
             return $this->mockCall();
         }
 
-        //return $this->plugin->getKeyValueClass();
+        $class = $this->plugin->getKeyValueClass();
+        $obj = new $class($this->connectorResolver);
+
+        return $obj();
     }
 
     public function callAsync(): ClientWrapperResponseInterface
